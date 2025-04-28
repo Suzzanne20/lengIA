@@ -153,8 +153,18 @@
               <div class="accordion-body">
                 <ul class="list-group">
                   <li class="list-group-item list-item" data-key="Hola">Hola</li>
-                  <li class="list-group-item list-item" data-key="Adiós">Adiós</li>
+                  <li class="list-group-item list-item" data-key="Adios">Adiós</li>
+                  <li class="list-group-item list-item" data-key="Minombre">Mi nombre</li>
+                  <li class="list-group-item list-item" data-key="Bdias">Buenos Días</li>
+                  <li class="list-group-item list-item" data-key="Btardes">Buenas Tardes</li>
+                  <li class="list-group-item list-item" data-key="Bnoches">Buenas Noches</li>
+                  <li class="list-group-item list-item" data-key="Comoestas">Como estás</li>
+                  <li class="list-group-item list-item" data-key="Buenprovecho">Buen Provecho</li>
+                  <li class="list-group-item list-item" data-key="Disculpa">Disculpa</li>
+                  <li class="list-group-item list-item" data-key="Porfavor">Por favor</li>
                   <li class="list-group-item list-item" data-key="Gracias">Gracias</li>
+                  <li class="list-group-item list-item" data-key="Porfavor">De nada</li>
+                  <li class="list-group-item list-item" data-key="Aplausos">Aplausos</li>
                 </ul>
               </div>
             </div>
@@ -169,9 +179,16 @@
             <div id="collapseFamilia" class="accordion-collapse collapse" aria-labelledby="headingFamilia" data-bs-parent="#accordionCategories">
               <div class="accordion-body">
                 <ul class="list-group">
+                  <li class="list-group-item list-item" data-key="Familia">Familia</li>
                   <li class="list-group-item list-item" data-key="Padre">Padre</li>
                   <li class="list-group-item list-item" data-key="Madre">Madre</li>
                   <li class="list-group-item list-item" data-key="Hermano">Hermano</li>
+                  <li class="list-group-item list-item" data-key="Hija">Hija</li>
+                  <li class="list-group-item list-item" data-key="Abuelo">Abuelo</li>
+                  <li class="list-group-item list-item" data-key="Nieto">Nieto</li>
+                  <li class="list-group-item list-item" data-key="Novio">Novio</li>
+                  <li class="list-group-item list-item" data-key="Bebe">Bebé</li>
+                  <li class="list-group-item list-item" data-key="Tia">Tia</li>
                 </ul>
               </div>
             </div>
@@ -188,7 +205,7 @@
                 <ul class="list-group">
                   <li class="list-group-item list-item" data-key="Lunes">Lunes</li>
                   <li class="list-group-item list-item" data-key="Martes">Martes</li>
-                  <li class="list-group-item list-item" data-key="Miércoles">Miércoles</li>
+                  <li class="list-group-item list-item" data-key="Miercoles">Miércoles</li>
                   <li class="list-group-item list-item" data-key="Jueves">Jueves</li>
                   <li class="list-group-item list-item" data-key="Viernes">Viernes</li>
                   <li class="list-group-item list-item" data-key="Sabado">Sabado</li>
@@ -304,42 +321,71 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mapping = {
+        //URL ABECEDARIO
         'A':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra A' },
         'B':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra B' },
-        'C':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra C' },
-        'D':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra D' },
-        'E':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra E' },
-        'F':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra F' },
-        'G':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra G' },
-        'H':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra H' },
-        'I':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra I' },
-        'J':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra J' },
-        'K':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra K' },
-        'L':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra L' },
-        'M':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra M' },
-        'N':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra N' },
-        'Ñ':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra Ñ' },
-        'O':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra O' },
-        'P':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra P' },
-        'Q':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra Q' },
-        'R':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra R' },
-        'S':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra S' },
-        'T':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra T' },
-        'U':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra U' },
-        'V':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra V' },
-        'W':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra W' },
-        'X':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fa.jpg?alt=media&token=fdb87aa8-ecf7-4f40-b314-4d348a4fb9bb', txt: 'Letra X' },
-        'Y':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fb.jpg?alt=media&token=7fcdc667-4769-4865-af7f-0b95ca277618', txt: 'Letra Y' },
-        'Z':      { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/C_sign_language.svg/200px-C_sign_language.svg.png', txt: 'Letra Z' },
-        'Hola':   { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Hello_sign_language.png/200px-Hello_sign_language.png', txt: 'Frase "Hola"' },
-        'Adiós':  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Goodbye_sign_language.png/200px-Goodbye_sign_language.png', txt: 'Frase "Adiós"' },
-        'Gracias':{ img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Thank_you_sign_language.png/200px-Thank_you_sign_language.png', txt: 'Frase "Gracias"' },
-        'Padre':  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Father_sign_language.png/200px-Father_sign_language.png', txt: 'Seña "Padre"' },
-        'Madre':  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mother_sign_language.png/200px-Mother_sign_language.png', txt: 'Seña "Madre"' },
-        'Hermano':{ img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Brother_sign_language.png/200px-Brother_sign_language.png', txt: 'Seña "Hermano"' },
-        'Lunes':  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Monday_sign_language.png/200px-Monday_sign_language.png', txt: 'Día "Lunes"' },
-        'Martes': { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tuesday_sign_language.png/200px-Tuesday_sign_language.png', txt: 'Día "Martes"' },
-        'Miércoles':{ img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Wednesday_sign_language.png/200px-Wednesday_sign_language.png', txt: 'Día "Miércoles"' }
+        'C':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fc.jpg?alt=media&token=e69f88fb-a48f-4910-a008-5552ccd2ef56', txt: 'Letra C' },
+        'D':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fd.webm?alt=media&token=c2103830-ef59-43c5-8bee-cb6d82fcb211', txt: 'Letra D' },
+        'E':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fe.jpg?alt=media&token=dd83d81c-01c6-41cb-b425-ae29e1a500b5', txt: 'Letra E' },
+        'F':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Ff.webm?alt=media&token=accfc4c9-eba3-438c-b62e-e4b469035cc8', txt: 'Letra F' },
+        'G':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fg.jpg?alt=media&token=65ce58f6-922b-4687-8c63-8d36a6d83015', txt: 'Letra G' },
+        'H':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fh.jpg?alt=media&token=4905b81a-1950-4a09-8de5-feeda78030b3', txt: 'Letra H' },
+        'I':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fi.jpg?alt=media&token=a414208a-a288-41cd-9a9b-5bc6507753b1', txt: 'Letra I' },
+        'J':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fj.webm?alt=media&token=11bb6058-df52-481f-8bbb-11eaea3e838d', txt: 'Letra J' },
+        'K':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fk.jpg?alt=media&token=66ecfaa6-16ec-42ef-8d72-5d97f97e3ac3', txt: 'Letra K' },
+        'L':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fl.jpg?alt=media&token=349d8ccd-5dcc-40a5-ba43-9ee45c477370', txt: 'Letra L' },
+        'M':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fm.jpg?alt=media&token=78a21962-928a-42ce-9607-9e79fe928a3b', txt: 'Letra M' },
+        'N':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fn.jpg?alt=media&token=f527a583-5c4f-49e1-b0b6-659371e52196', txt: 'Letra N' },
+        'Ñ':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fn%CC%83.jpg?alt=media&token=8c2a9532-d596-4fc4-bb82-93c61f3a5670', txt: 'Letra Ñ' },
+        'O':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fo.jpg?alt=media&token=bd72e072-6038-4841-860b-317c3300a3b4', txt: 'Letra O' },
+        'P':      { img: 'https://i.pinimg.com/736x/56/38/47/563847fe9e3e99c944d08699b545c59e.jpg', txt: 'Letra P' },
+        'Q':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fq.jpg?alt=media&token=8c788b85-b2dd-4101-8cce-9f174d6da572', txt: 'Letra Q' },
+        'R':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fr.jpg?alt=media&token=e37ca5af-5a70-4e95-9744-486cab08f4c2', txt: 'Letra R' },
+        'S':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fs.webm?alt=media&token=c6068329-da1b-4308-8255-0b9cf69e64a8', txt: 'Letra S' },
+        'T':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Ft.jpg?alt=media&token=66cf97a2-e799-421a-a166-45ad1a830c73', txt: 'Letra T' },
+        'U':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fu.jpg?alt=media&token=9fff546b-720f-460e-b024-50bcb56f9b72', txt: 'Letra U' },
+        'V':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fv.jpg?alt=media&token=4d86868e-b028-4581-a0af-c8bb86615e83', txt: 'Letra V' },
+        'W':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fw.jpg?alt=media&token=6bbd35a7-26dd-4ae3-b786-4cec7a2e4866', txt: 'Letra W' },
+        'X':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fx.jpg?alt=media&token=34768c4f-9f5e-4496-85b4-11cf6992050a', txt: 'Letra X' },
+        'Y':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fy.jpg?alt=media&token=dd5d9335-c0e9-49c2-9816-4b91352a0751', txt: 'Letra Y' },
+        'Z':      { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00001%2Fz.jpg?alt=media&token=883c2105-3087-48fd-8ad2-3507ebcbb71e', txt: 'Letra Z' },
+
+        //URL FRASES        
+        'Hola':   { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fhola.webm?alt=media&token=ffff13a3-4957-4bec-9544-e1588cb7afb5', txt: 'Frase "Hola"' },
+        'Adios':  { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fadio%CC%81s.webm?alt=media&token=1f55a901-474d-46fa-a261-6658385e323b', txt: 'Frase "Adiós"' },
+        'Minombre':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fmi%20nombre.webm?alt=media&token=9e8dc97a-aeb0-4b06-a206-b4217d56dc15', txt: 'Frase "Mi nombre"' },
+        'Bdias':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fbuenos%20di%CC%81as.webm?alt=media&token=4772ec8f-c69e-4852-bf15-32b0fe278bfb', txt: 'Frase "Buenos Días"' },
+        'Btardes':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fbuenas%20tardes.webm?alt=media&token=0b0cad04-241c-456d-81b5-994d7da87e30', txt: 'Frase "Buenas Tardes"' },
+        'Bnoches':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fbuenas%20noches.webm?alt=media&token=1b8d570b-8fe4-4597-8987-2d8c9aabfcee', txt: 'Frase "Buenas Noches"' },
+        'Comoestas':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fcomo%20esta%CC%81s.webm?alt=media&token=190cd44c-1be8-42c4-9aaa-f829e4067848', txt: 'Frase "Como estás"' },
+        'Buenprovecho':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fbuen%20provecho.webm?alt=media&token=6027dc68-d36b-46e2-808f-e5f1caee6ee3', txt: 'Frase "Buen Provecho"' },
+        'Aplausos':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fdisculpa.webm?alt=media&token=b6cce4dd-78b9-461d-a04b-694bc5e1c5d8', txt: 'Frase "Disculpa"' },
+        'Porfavor':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fpor%20favor.webm?alt=media&token=a71fa040-efa5-4398-bfec-b8c5c7ba0f3b', txt: 'Frase "Por favor"' },
+        'Gracias':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fgracias.webm?alt=media&token=de5bfeba-84ea-4834-bd6e-bf4403d4b341', txt: 'Frase "Gracias"' },
+        'Porfavor':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Fde%20nada.webm?alt=media&token=81c9debe-1da0-40b5-ba2e-a4e0e83236fd', txt: 'Frase "De nada"' },
+        'Aplausos':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00003%2F00012%2Faplausos.webm?alt=media&token=2d1d383f-c3a3-4489-b526-c784208f92b8', txt: 'Frase "Aplausos"' },
+    
+        //URL FAMILIA
+        'Familia':  { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Ffamilia.webm?alt=media&token=3d0d9e13-e1ba-45da-8951-8fe1bc2cb03e', txt: 'Seña "Familia"' },          
+        'Padre':  { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fpapa%CC%81.webm?alt=media&token=eb0baa14-0978-40c5-928f-8b4b3ca2830e', txt: 'Seña "Padre"' },
+        'Madre':  { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fmama%CC%81.webm?alt=media&token=1d0f11af-69e9-401d-82cc-a3b7238bd2a0', txt: 'Seña "Madre"' },
+        'Hermano':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fhermano.webm?alt=media&token=188dd6ed-f94e-4704-96b8-3b8de922e88e', txt: 'Seña "Hermano"' },
+        'Hija':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fhija.webm?alt=media&token=f4e98ba6-9b75-4b03-aed6-5fcec7c8ca2c', txt: 'Seña "Hija"' },
+        'Abuelo':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fabuelo.webm?alt=media&token=ed79d5eb-3867-4c6a-99f6-ceefda3f5056', txt: 'Seña "Abuelo"' },
+        'Nieto':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fnieto.webm?alt=media&token=be102ac1-0055-4623-aee7-43a3d4c9a2a7', txt: 'Seña "Nieto"' },
+        'Novio':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fnovio.webm?alt=media&token=46fccc3b-ace3-4dce-999a-bc4d6a686d59', txt: 'Seña "Novio"' },
+        'Bebe':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fbebe%CC%81.webm?alt=media&token=78400b79-8015-4e51-aeac-0218fab7d163', txt: 'Seña "Bebé"' },
+        'Tia':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00002%2F00007%2Fti%CC%81a.webm?alt=media&token=b4a8e818-cdbc-4d94-a4fb-e669afe5efa6', txt: 'Seña "Tia"' },
+        
+
+        //URL DIAS DE LA SEMANA
+        'Lunes':  { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Flunes.webm?alt=media&token=db87067f-c871-4393-9256-3f895567ace9', txt: 'Día "Lunes"' },
+        'Martes': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fmartes.webm?alt=media&token=7b815abb-00a7-4711-94bc-9274eb373cf6', txt: 'Día "Martes"' },
+        'Miercoles':{ img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fmie%CC%81rcoles.webm?alt=media&token=0a3a679c-c69a-45be-bf43-636d3b9e4ea3', txt: 'Día "Miércoles"' },        
+        'Jueves': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fjueves.webm?alt=media&token=bb8d3f58-f4e2-483e-8b60-0cefa866530f', txt: 'Día "Jueves"' },
+        'Viernes': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fviernes.webm?alt=media&token=5407ecd3-1143-4c01-9675-6059762fb282', txt: 'Día "Viernes"' },
+        'Sabado': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fsa%CC%81bado.webm?alt=media&token=2658dbcf-8021-4154-9ae1-6faca6ed053b', txt: 'Día "Sabado"' },
+        'Domingo': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fdomingo.webm?alt=media&token=c75e8923-dba2-48a7-abdd-a7ef1a73c9fc', txt: 'Día "Viernes"' },
       };
       const sidebarContent = document.getElementById('sidebar-content');
       document.querySelectorAll('.list-item').forEach(li => {
