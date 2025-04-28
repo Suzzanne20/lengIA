@@ -35,7 +35,7 @@
     /* Layout adjustments */
     .vh-100 { height: 100vh; }
     #sidebar { border-right: 1px solid #ddd; }
-    #sidebar-content .card { max-width: 320px; margin: 0 auto; margin-top: 10px; }
+    #sidebar-content .card { max-width: 420px; margin: 0 auto; margin-top: 30px; }
 
     /* Accordion sidebar */
     .list-group-item { cursor: pointer; }
@@ -80,6 +80,7 @@
     footer {
       text-align: center;
       background-color: var(--primary-color);
+      padding: 5px 0;
       color: white;
       font-size: 0.9em;
     }
@@ -388,21 +389,45 @@
         'Domingo': { img: 'https://firebasestorage.googleapis.com/v0/b/lensegua-20316.appspot.com/o/00001%2F00003%2Fdomingo.webm?alt=media&token=c75e8923-dba2-48a7-abdd-a7ef1a73c9fc', txt: 'Día "Viernes"' },
       };
       const sidebarContent = document.getElementById('sidebar-content');
-      document.querySelectorAll('.list-item').forEach(li => {
-        li.addEventListener('click', () => {
-          document.querySelectorAll('.accordion-collapse.show').forEach(shown => {
-            new bootstrap.Collapse(shown, { toggle: true });
-          });
-          const entry = mapping[li.dataset.key];
-          if (!entry) return;
-          sidebarContent.innerHTML = `
-            <div class="card">
-              <img src="${entry.img}" alt="Seña de ${entry.txt}" class="card-img-top">
-              <div class="card-body"><p class="card-text">${entry.txt}</p></div>
-            </div>`;
-        });
+
+    document.querySelectorAll('.list-item').forEach(li => {
+      li.addEventListener('click', () => {
+        // 1) Colapsar cualquier sección abierta
+        document.querySelectorAll('.accordion-collapse.show')
+          .forEach(shown => new bootstrap.Collapse(shown, { toggle: true }));
+
+        // 2) Obtener la entrada
+        const entry = mapping[li.dataset.key];
+        if (!entry) return;
+
+        // 3) Generar HTML según tipo de recurso
+        const src = entry.img;
+        let mediaHtml;
+        if (src.match(/\.(webm|mp4)(\?|$)/i)) {
+          mediaHtml = `
+            <video controls autoplay loop style="width:100%; border-radius:8px 8px 0 0;">
+              <source src="${src}" type="video/webm">
+              Tu navegador no soporta este formato de video.
+            </video>`;
+        } else {
+          mediaHtml = `
+            <img src="${src}"
+                 alt="Seña de ${entry.txt}"
+                 class="card-img-top"
+                 style="border-radius:8px 8px 0 0;">`;
+        }
+
+        // 4) Inyectar la card
+        sidebarContent.innerHTML = `
+          <div class="card">
+            ${mediaHtml}
+            <div class="card-body">
+              <p class="card-text">${entry.txt}</p>
+            </div>
+          </div>`;
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
